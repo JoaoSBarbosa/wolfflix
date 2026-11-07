@@ -1,5 +1,6 @@
 package com.barbosacode.admin.catalog.domain;
 
+import com.barbosacode.admin.catalog.domain.category.Category;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
