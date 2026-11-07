@@ -25,4 +25,21 @@ public class CategoryTest {
         Assertions.assertEquals(isActive, category.isActive());
 
     }
+
+    @Test
+    @DisplayName("Deve lançar uma exceção quando o nome for nulo")
+    public void shouldExceptionWhenNameIsNull(){
+        final String expectedName = null;
+        final int expectedErrorCount = 1;
+        final String expectedErrorMessage = "'Nome' da categoria não deve ser nulo";
+        final String description = "A categoria mais assistida";
+        final boolean isActive = true;
+
+        final Category actualCategory = Category.create(expectedName, description, isActive);
+        final var actualException = Assertions.assertThrows(DomainException.class, () -> actualCategory.validate());
+
+
+        Assertions.assertEquals(expectedErrorCount, actualException.getErrors().size());
+        Assertions.assertEquals(expectedErrorMessage, actualException.getErrors().get(0).message());
+    }
 }
