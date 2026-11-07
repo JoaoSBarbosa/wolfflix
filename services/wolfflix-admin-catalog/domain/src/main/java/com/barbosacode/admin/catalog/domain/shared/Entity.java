@@ -1,4 +1,4 @@
-package com.barbosacode.admin.catalog.domain;
+package com.barbosacode.admin.catalog.domain.shared;
 
 import java.util.Objects;
 
