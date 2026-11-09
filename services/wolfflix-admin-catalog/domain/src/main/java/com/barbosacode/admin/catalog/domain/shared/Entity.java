@@ -1,5 +1,7 @@
 package com.barbosacode.admin.catalog.domain.shared;
 
+import com.barbosacode.admin.catalog.domain.validation.ValidationHandler;
+
 import java.util.Objects;
 
 public abstract class Entity<ID extends Identifier> {
@@ -12,6 +14,7 @@ public abstract class Entity<ID extends Identifier> {
         this.id = id;
     }
 
+    public abstract void validate(ValidationHandler handler);
 
     @Override
     public boolean equals(Object object) {

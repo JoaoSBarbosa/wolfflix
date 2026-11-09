@@ -1,6 +1,8 @@
 package com.barbosacode.admin.catalog.domain.category;
+import com.barbosacode.admin.catalog.domain.category.validator.CategoryValidator;
 import com.barbosacode.admin.catalog.domain.shared.AggregateRoot;
 import com.barbosacode.admin.catalog.domain.category.vo.CategoryId;
+import com.barbosacode.admin.catalog.domain.validation.ValidationHandler;
 
 import java.time.Instant;
 
@@ -41,6 +43,11 @@ public class Category extends AggregateRoot<CategoryId> {
         final Instant now = Instant.now();
         return new Category(id, name, description, isActive, now, now, null);
 
+    }
+
+    @Override
+    public void validate(final ValidationHandler handler) {
+        new CategoryValidator(this, handler).validate();
     }
 
     public CategoryId getId() {
