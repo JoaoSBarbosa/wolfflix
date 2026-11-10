@@ -1,7 +1,8 @@
 package com.barbosacode.admin.catalog.domain.category;
+
 import com.barbosacode.admin.catalog.domain.category.validator.CategoryValidator;
-import com.barbosacode.admin.catalog.domain.shared.AggregateRoot;
 import com.barbosacode.admin.catalog.domain.category.vo.CategoryId;
+import com.barbosacode.admin.catalog.domain.shared.AggregateRoot;
 import com.barbosacode.admin.catalog.domain.validation.ValidationHandler;
 
 import java.time.Instant;

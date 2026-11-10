@@ -1,6 +1,7 @@
 package com.barbosacode.admin.catalog.domain;
 
 import com.barbosacode.admin.catalog.domain.category.Category;
+
 import com.barbosacode.admin.catalog.domain.exceptions.DomainException;
 import com.barbosacode.admin.catalog.domain.validation.handler.ThrowValidationHandler;
 import org.junit.jupiter.api.Assertions;
@@ -10,10 +11,9 @@ import org.junit.jupiter.api.Test;
 public class CategoryTest {
 
 
-
     @Test
     @DisplayName("Deve criar uma categoria quando os parâmetros forem válidos")
-    public void shouldCreateCategoryWhenValidParams(){
+    public void shouldCreateCategoryWhenValidParams() {
 
         final String name = "Ação e Aventura";
         final String description = "A categoria mais assistida";
@@ -30,7 +30,7 @@ public class CategoryTest {
 
     @Test
     @DisplayName("Deve lançar uma exceção quando o nome for nulo")
-    public void shouldExceptionWhenNameIsNull(){
+    public void shouldExceptionWhenNameIsNull() {
         final String expectedName = null;
         final int expectedErrorCount = 1;
         final String expectedErrorMessage = "'Nome' da categoria não deve ser nulo ou vazio";
